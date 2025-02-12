@@ -1,7 +1,5 @@
 import { twJoin } from 'tailwind-merge';
-import { lightOrDark } from '../utils/commonUtils';
 import { useAppContext } from './contexts/appContext';
-import { Button } from './custom-button';
 import HeaderBlogSearch from './header-blog-search';
 import HeaderLeftSidebar from './header-left-sidebar';
 import PublicationLogo from './publication-logo';
@@ -43,7 +41,7 @@ export const Header = (props: Props) => {
 						)}
 					>
 						<HeaderBlogSearch publication={publication} />
-						<Button as="a" href="#" type="primary" label="Sign up" />
+						{/* Sign up 버튼 제거됨 */}
 					</div>
 				</div>
 
