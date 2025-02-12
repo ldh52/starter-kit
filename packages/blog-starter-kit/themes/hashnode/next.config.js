@@ -36,12 +36,8 @@ const getRedirectionRules = async () => {
 
 	const redirectionRules = data.publication.redirectionRules;
 
-	// convert to next.js redirects format
 	const redirects = redirectionRules
 		.filter((rule) => {
-			// Hashnode gives an option to set a wildcard redirect,
-			// but it doesn't work properly with Next.js
-			// the solution is to filter out all the rules with wildcard and use static redirects for now
 			return rule.source.indexOf('*') === -1;
 		})
 		.map((rule) => {
@@ -87,6 +83,22 @@ const config = {
 	},
 	async redirects() {
 		return await getRedirectionRules();
+	},
+	// 추가된 메타데이터 설정
+	metadata: {
+		title: 'Companion Animal News',
+		description: '지역별 반려동물 뉴스 & 반려동물 돌봄, 문화, 산업정보 큐레이션',
+		openGraph: {
+			title: 'Companion Animal News',
+			description: '지역별 반려동물 뉴스 & 반려동물 돌봄, 문화, 산업정보 큐레이션',
+			images: [
+				{
+					url: 'https://cdn.hashnode.com/res/hashnode/image/upload/v1739371517986/c139d17c-5629-440c-bcb3-9a489c609ca4.jpeg',
+					width: 1200,
+					height: 630,
+				},
+			],
+		},
 	},
 };
 
