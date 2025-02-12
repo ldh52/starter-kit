@@ -41,7 +41,7 @@ const PostPageNavbar = forwardRef<HTMLElement, Props>((props, ref) => {
 						<Link
 							href="/"
 							aria-label="Back to blog home"
-							className={twJoin('blog-back-to-home-button', commonIconBtnStyles, 'mr-2 p-3')}
+							className={twJoin('blog-back-to-home-', commonIconBtnStyles, 'mr-2 p-3')}
 						>
 							<ChevronLeftSVG className="h-4 w-4 fill-current pr-1" />
 						</Link>
@@ -63,7 +63,6 @@ const PostPageNavbar = forwardRef<HTMLElement, Props>((props, ref) => {
 					)}
 				>
 					<HeaderBlogSearch publication={publication} />
-					<Button as="a" href="#" type="primary" label="Sign up" />
 				</div>
 			</div>
 
